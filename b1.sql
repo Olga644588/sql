@@ -16,7 +16,7 @@ FOREIGN KEY(genre_id) REFERENCES genres(genre_id)
 CREATE TABLE albums(
 album_id SERIAL PRIMARY KEY,
 title VARCHAR(100) NOT NULL,
-release_date DATE
+release_year INTEGER NOT NULL
 );
 CREATE TABLE artists_albums(
 artist_id INTEGER NOT NULL,
@@ -28,7 +28,8 @@ FOREIGN KEY(album_id) REFERENCES albums(album_id)
 CREATE TABLE tracks(
 track_id SERIAL PRIMARY KEY,
 title VARCHAR(100) NOT NULL,
-duration TIME,
+release_year INTEGER NOT NULL
+duration_seconds INTEGER NOT NULL,
 album_id INTEGER NOT NULL,
 FOREIGN KEY(album_id) REFERENCES albums(album_id)
 );
