@@ -28,12 +28,12 @@ FOREIGN KEY(album_id) REFERENCES albums(album_id)
 CREATE TABLE tracks(
 track_id SERIAL PRIMARY KEY,
 title VARCHAR(100) NOT NULL,
-release_year INTEGER NOT NULL
+release_year INTEGER NOT NULL,
 duration_seconds INTEGER NOT NULL,
 album_id INTEGER NOT NULL,
 FOREIGN KEY(album_id) REFERENCES albums(album_id)
 );
-CREATE TABLE compilation(
+CREATE TABLE compilations(
 compilation_id SERIAL PRIMARY KEY,
 title VARCHAR(120) NOT NULL,
 release_year INTEGER NOT NULL
